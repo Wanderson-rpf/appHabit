@@ -2,6 +2,51 @@
 @tailwind utilities;
 @tailwind components;
 
-.habits-checks {
-  @apply w-10 h-10 bg-purple-900 m-2 rounded flex items-center justify-center;
+body {
+  @apply bg-background text-white;
 }
+
+.app-container {
+  @apply w-screen h-screen flex justify-center items-center;
+}
+
+.app-box {
+  @apply w-full max-w-5xl px-6 flex flex-col gap-16;
+}
+
+.container-header {
+  @apply w-full max-w-3xl mx-auto flex items-center justify-between;
+}
+
+.btn-new-habit {
+  @apply border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300;
+}
+
+.icon-add-habit {
+  @apply text-violet-500;
+}
+
+.container-summary-table {
+  @apply w-full flex;
+}
+
+.container-days-week {
+  @apply grid grid-rows-7 grid-flow-row gap-3;
+}
+
+.box-days-week {
+  @apply text-zinc-400 text-xl h-10 w-10 font-bold flex items-center justify-center;
+}
+
+.container-days-habits {
+  @apply grid grid-rows-7 grid-flow-col gap-3;
+}
+
+.box-day {
+  @apply w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg;
+}
+
+.box-day-placeholder {
+  @apply w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg opacity-40 cursor-not-allowed;
+}
+

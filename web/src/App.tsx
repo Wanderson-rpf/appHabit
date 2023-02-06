@@ -1,16 +1,19 @@
-import { Habit } from './components/habits'
+import { Header } from './components/Header';
+import { SummaryTable } from './components/SummaryTable';
 import './style/global.css';
 
-function App() {
+
+// import { Habit } from './components/habits'
+
+export function App() {
 
   return (
-    <div className="App">
-      <Habit completed={3} />
-      <Habit completed={3} />
-      <Habit completed={3} />
-      <Habit completed={3} />
+    <div className="app-container">
+      <div className='app-box'>
+        <Header />
+        <SummaryTable />
+      </div>
     </div>
   )
 }
 
-export default App
