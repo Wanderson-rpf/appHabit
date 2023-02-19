@@ -43,10 +43,92 @@ body {
 }
 
 .box-day {
-  @apply w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg;
+  @apply w-10 h-10 border-2 rounded-lg;
+}
+
+.box-day-0 {
+  @apply bg-zinc-900 border-zinc-800;
+}
+
+.box-day-20 {
+  @apply bg-violet-900 border-violet-700;
+}
+
+.box-day-40 {
+  @apply bg-violet-800 border-violet-600;
+}
+
+.box-day-60 {
+  @apply bg-violet-700 border-violet-500;
+}
+
+.box-day-80 {
+  @apply bg-violet-600 border-violet-500;
+}
+
+.box-day-80-plus {
+  @apply bg-violet-500 border-violet-400;
 }
 
 .box-day-placeholder {
   @apply w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg opacity-40 cursor-not-allowed;
 }
 
+/* ------------- Modal new habit ------------- */
+.modal-overlay {
+  @apply w-screen h-screen bg-black/80 fixed inset-0;
+}
+
+.modal-content {
+  @apply absolute p-10 bg-zinc-900 rounded-2xl w-full max-w-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.modal-close {
+  @apply absolute right-6 top-6 text-zinc-400 hover:text-zinc-200;
+}
+
+.modal-title {
+  @apply text-3xl leading-tight font-extrabold;
+}
+
+/* ------------- Form new habit ------------- */
+.form-new-habit {
+  @apply w-full flex flex-col mt-4;
+}
+
+.label-title {
+  @apply font-semibold leading-tight mt-4;
+}
+
+.input-title {
+  @apply p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400;
+}
+
+.button-form {
+  @apply mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500;
+}
+
+/* ------------- Modal habit in progress ------------- */
+.popover-content {
+  @apply min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col;
+}
+
+.popover-arrow {
+  @apply fill-zinc-900;
+}
+
+.span-day {
+  @apply font-semibold text-zinc-400;
+}
+
+.span-date {
+  @apply mt-1 font-extrabold leading-tight text-3xl;
+}
+
+.container-progress {
+  @apply h-3 rounded-xl bg-zinc-700 w-full mt-4;
+}
+
+.progress {
+  @apply h-3 rounded-xl bg-violet-600;
+}
