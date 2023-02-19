@@ -1,5 +1,5 @@
 import { generateDateFromYearBeginning } from "../utils/generate-dates-from-year-beginning";
-import { HabitDay } from "./habitsDay";
+import { HabitDay } from "./HabitsDay";
 
 export function SummaryTable() {
   const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -17,7 +17,11 @@ export function SummaryTable() {
       </div>
       <div className="container-days-habits">
         { summaryDates.map(date => {
-          return <HabitDay key={ date.toString() } />})
+          return <HabitDay 
+            key={ date.toString() } 
+            amount={5} 
+            completed={Math.random() * 5} 
+          />})
         }
 
         { amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, index) => {
