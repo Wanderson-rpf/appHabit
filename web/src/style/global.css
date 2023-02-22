@@ -108,6 +108,14 @@ body {
   @apply mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500;
 }
 
+.container-checkbox-new-habit {
+  @apply flex flex-col mt-3;
+}
+
+.span-new-habit {
+  @apply text-white leading-tight;
+}
+
 /* ------------- Modal habit in progress ------------- */
 .popover-content {
   @apply min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col;
@@ -131,4 +139,20 @@ body {
 
 .progress {
   @apply h-3 rounded-xl bg-violet-600;
+}
+
+.container-checkbox {
+  @apply mt-6 flex flex-col gap-3;
+}
+
+.box-checkbox {
+  @apply flex items-center gap-3;
+}
+
+.span-habit {
+  @apply font-semibold text-xl text-white leading-tight group-data-[state=checked]:line-through group-data-[state=checked]:text-zinc-400;
+}
+
+.box-indicator {
+  @apply w-8 h-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500; 
 }
