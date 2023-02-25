@@ -1,10 +1,10 @@
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { View, Text, ScrollView, Alert } from "react-native";
 import { DAY_SIZE, HabitDay } from "../components/HabitDay";
 import { Header } from "../components/Header";
 import { generateRangeDatesFromYearStart } from "../utils/generate-range-between-dates";
 import { api } from "../libs/axios";
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Loading } from "../components/Loading";
 import dayjs from "dayjs";
 
@@ -30,19 +30,19 @@ export function Home() {
       setLoading(true);
       const response = await api.get("/summary");
       setSummary(response.data);
-      console.log("---->", summary);
-      console.log(JSON.stringify(response.data));
+
     } catch (error) {
       Alert.alert("Ops!", "Não foi possivel carregar o sumário de hábitos.");
-      console.log(JSON.stringify(error));
+      
     } finally {
       setLoading(false);
     }
   }
 
-  useEffect(() => {
+  // Sempre que a tela esta em "foco" ela é rederizada novamente (usei para atualizar o status dos hábitos)
+  useFocusEffect(useCallback(() => {
     fetchData();
-  }, []);
+  }, []));
 
   if (loading) {
     return <Loading />;

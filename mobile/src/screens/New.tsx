@@ -40,18 +40,17 @@ export function New() {
   async function handleCreateNewHabit() {
     try {
       if (!title.trim() || weekDays.length === 0) {
-        Alert.alert('Novo hábito', 'Informe o nome do hábito e escolha a preriodicidade.');
+        return Alert.alert('Novo hábito', 'Informe o nome do hábito e escolha a preriodicidade.');
       }
 
       await api.post('/habits', {title, weekDays});
 
       setTitle('');
       setWeekDays([]);
-      Alert.alert('Novo hábito', 'Hábito criado com sucesso.');
+      return Alert.alert('Novo hábito', 'Hábito criado com sucesso.');
 
     } catch (error) {
-      console.log(error);
-      Alert.alert('Ops', 'Não foi possivel criar o novo hábito.');
+      return Alert.alert('Ops', 'Não foi possivel criar o novo hábito.');
       
     }
   }
