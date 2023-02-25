@@ -35,7 +35,7 @@ export function SummaryTable() {
         ))}
       </div>
       <div className="container-days-habits">
-        {summaryDates.map((date) => {
+        {summary.length > 0 && summaryDates.map((date) => {
           const dayInSummary = summary.find((day) => {
             return dayjs(date).isSame(day.date, "day");
           });
@@ -45,7 +45,7 @@ export function SummaryTable() {
               key={date.toString()}
               date={date}
               amount={dayInSummary?.amount}
-              completed={dayInSummary?.completed}
+              defaultCompleted={dayInSummary?.completed}
             />
           );
         })}
